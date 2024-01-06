@@ -1,0 +1,14 @@
+<resources>
+    <string name="empty" translatable="false" />
+    <string name="dash" translatable="false">-</string>
+
+    <!--Splash Fragment-->
+    <string name="splash_title_arx">Hello World</string>
+    <string name="splash_description_arx">ARX</string>
+
+    <string name="splash_title_personal">Hello _____</string>
+    <string name="splash_description_personal">Welcome to the assignment</string>
+
+    <string name="open_at_external_app_not_found">You haven\'t installed the application</string>
+
+</resources>

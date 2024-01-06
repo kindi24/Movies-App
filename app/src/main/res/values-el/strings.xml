@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Splash Fragment-->
+    <string name="splash_title_arx">Hello World</string>
+    <string name="splash_description_arx">ARX</string>
+
+    <string name="splash_title_personal">Hello _____</string>
+    <string name="splash_description_personal">Καλώς ορίσατε στην εργασία</string>
+
+    <string name="open_at_external_app_not_found">Δεν έχεις εγκαταστήσει την εφαρμογή</string>
+
+</resources>
