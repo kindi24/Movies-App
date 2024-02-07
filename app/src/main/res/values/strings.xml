@@ -10,5 +10,12 @@
     <string name="splash_description_personal">Welcome to the assignment</string>
 
     <string name="open_at_external_app_not_found">You haven\'t installed the application</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="movies_category" translatable="false">Movies Category</string>
+    <string name="movies_category_name" translatable="false">Movies category name</string>
+
+
+    <string name="movie_popularity">Popularity</string>
+    <string name="movie_rating">Rating</string>
 
 </resources>

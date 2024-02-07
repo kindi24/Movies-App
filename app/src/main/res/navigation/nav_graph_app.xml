@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash_nav_graph"
-    app:startDestination="@+id/splashFragmentWithCompose">
+    app:startDestination="@+id/moviesDashboardView"> <!-- TODO You can add your screen id here in order to launch the app on your screen -->
 
     <fragment
         android:id="@+id/splashFragment"
@@ -16,5 +16,43 @@
         android:name="net.arx.helloworldarx.ui.splash.SplashFragmentWithCompose"
         android:label="SplashFragmentWithCompose"
         tools:layout="@layout/fragment_splash_compose_view" />
+
+    <fragment
+        android:id="@+id/moviesDashboardView"
+        android:name="net.arx.helloworldarx.ui.Dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_moviesDashboardView_to_movieDetailsView"
+            app:destination="@id/movieDetailsView" />
+        <action
+            android:id="@+id/action_moviesDashboardView_to_moviesCategoryView2"
+            app:destination="@id/moviesCategoryView" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailsView"
+        android:name="net.arx.helloworldarx.ui.movieDetails.MovieDetailsFragment"
+        android:label="MovieDetails"
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesCategoryView"
+        android:name="net.arx.helloworldarx.ui.moviesCategory.MoviesCategoryFragment"
+        android:label="MoviesCategory"
+        tools:layout="@layout/fragment_movies_category" >
+        <argument
+            android:name="moviesCategory"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_moviesCategoryView_to_movieDetailsView"
+            app:destination="@id/movieDetailsView" />
+
+    </fragment>
+
 
 </navigation>

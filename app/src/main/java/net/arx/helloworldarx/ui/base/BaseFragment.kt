@@ -122,7 +122,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
             }
         }
     }
-}
 
 @Keep
 enum class ViewMode {
@@ -132,4 +131,5 @@ enum class ViewMode {
 @Keep
 enum class StatusBarType {
     LIGHT, DARK
+}
 }

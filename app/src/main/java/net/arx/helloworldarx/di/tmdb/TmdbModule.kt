@@ -1,12 +1,17 @@
 package net.arx.helloworldarx.di.tmdb
 
+import android.content.Context
+import androidx.room.Room
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import net.arx.helloworldarx.BuildConfig
 import net.arx.helloworldarx.data.tmdb.datasource.TmdbDataSource
+import net.arx.helloworldarx.data.tmdb.local.TmdbDao
+import net.arx.helloworldarx.data.tmdb.local.TmdbDatabase
 import net.arx.helloworldarx.data.tmdb.repository.TmdbRepositoryImpl
 import net.arx.helloworldarx.di.qualifier.TmdbApiOkHttpClient
 import net.arx.helloworldarx.domain.tmdb.repository.TmdbRepository
@@ -57,7 +62,25 @@ object TmdbModule {
             .build()
             .create(TmdbApi::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideTmdbDatabase(@ApplicationContext context: Context): TmdbDatabase {
+        return Room.databaseBuilder(
+            context,
+            TmdbDatabase::class.java,
+            "database.db"
+        ).build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideTmdbDao(tmdbDatabase: TmdbDatabase): TmdbDao {
+        return tmdbDatabase.tmdbDao()
+    }
+
 }
+
 
 @Module
 @InstallIn(SingletonComponent::class)

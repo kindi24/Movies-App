@@ -8,8 +8,8 @@ import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
 import net.arx.helloworldarx.databinding.FragmentSplashBinding
 import net.arx.helloworldarx.ui.base.BaseFragment
-import net.arx.helloworldarx.ui.base.StatusBarType
-import net.arx.helloworldarx.ui.base.ViewMode
+//import net.arx.helloworldarx.ui.base.StatusBarType
+//import net.arx.helloworldarx.ui.base.ViewMode
 import net.arx.helloworldarx.ui.splash.model.SplashUiState
 
 @AndroidEntryPoint

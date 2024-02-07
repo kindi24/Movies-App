@@ -9,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import net.arx.helloworldarx.ui.base.BaseViewModel
 import net.arx.helloworldarx.ui.splash.mapper.SplashStateUiMapper
 import net.arx.helloworldarx.ui.splash.model.SplashUiState
@@ -38,12 +37,12 @@ class SplashViewModel @Inject constructor(
         launch {
             val welcomeType = getWelcomeTypeUseCase()
             val splashUiState = splashStateUiMapper(splashWelcomeType = welcomeType)
-           //_splashUi.value = SplashUiState.LoadingUiState
+            _splashUi.value = SplashUiState.LoadingUiState
             // possible request - represented by delay
             delay(3000)
             //_splashUi.value = splashUiState
-            //_splashStateUi.value = splashUiState
-            _splashStateFlowUi.update { splashUiState }
+            _splashStateUi.value = splashUiState
+           // _splashStateFlowUi.update { splashUiState }
         }
     }
 }

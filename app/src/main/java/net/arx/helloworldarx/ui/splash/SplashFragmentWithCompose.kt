@@ -6,9 +6,9 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import net.arx.helloworldarx.databinding.FragmentSplashComposeViewBinding
 import net.arx.helloworldarx.ui.base.BaseFragment
-import net.arx.helloworldarx.ui.base.StatusBarType
-import net.arx.helloworldarx.ui.base.ViewMode
-import net.arx.helloworldarx.ui.splash.composable.SplashScreen
+//import net.arx.helloworldarx.ui.base.StatusBarType
+//import net.arx.helloworldarx.ui.base.ViewMode
+//import net.arx.helloworldarx.ui.splash.composable.SplashScreen
 import net.arx.helloworldarx.ui.theme.HelloWorldArxTheme
 
 @AndroidEntryPoint
@@ -33,7 +33,7 @@ class SplashFragmentWithCompose : BaseFragment<FragmentSplashComposeViewBinding>
         with(binding) {
             composeView.setContent {
                 HelloWorldArxTheme {
-                    SplashScreen(viewModel = viewModel)
+                    //SplashScreen(viewModel = viewModel)
                 }
             }
         }

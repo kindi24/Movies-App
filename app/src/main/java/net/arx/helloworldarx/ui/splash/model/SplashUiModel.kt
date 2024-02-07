@@ -7,8 +7,7 @@ import net.arx.helloworldarx.R
 sealed interface SplashUiState {
     class DefaultUiState(val splashWelcomeUiType: SplashWelcomeUiType) : SplashUiState
     object ErrorUiState : SplashUiState
-    object LoadingUiState : SplashUiState
-}
+    object LoadingUiState : SplashUiState}
 
 sealed class SplashWelcomeUiType(@StringRes val titleRes: Int, @StringRes val descriptionRes: Int) {
     object ArxWelcome : SplashWelcomeUiType(titleRes = R.string.splash_title_arx, descriptionRes = R.string.splash_description_arx)

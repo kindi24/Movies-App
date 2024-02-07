@@ -10,4 +10,7 @@
 
     <string name="open_at_external_app_not_found">Δεν έχεις εγκαταστήσει την εφαρμογή</string>
 
+    <string name="movie_popularity">Δημοτικότητα</string>
+    <string name="movie_rating">Βαθμός</string>
+
 </resources>

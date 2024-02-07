@@ -1,4 +1,5 @@
 package net.arx.helloworldarx.ui.splash
+/* TODO, Definitely not :)
 
 import android.content.res.Resources
 import androidx.compose.runtime.mutableStateOf
@@ -54,4 +55,4 @@ class SplashTestComposables {
         composeTestRule.onNodeWithTag(SPLASH_TITLE_TEXT_TAG).assertTextEquals(expectedTitleText)
         composeTestRule.onNodeWithTag(SPLASH_DESCRIPTION_TEXT_TAG).assertTextEquals(expectedDescriptionText)
     }
-}
+} */

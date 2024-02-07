@@ -31,7 +31,7 @@ import net.arx.helloworldarx.ui.theme.SpacingCustom_24dp
 import net.arx.helloworldarx.ui.theme.SpacingDefault_16dp
 import net.arx.helloworldarx.ui.theme.SpacingQuarter_4dp
 
-@Composable
+/*@Composable
 internal fun SplashScreen(viewModel: SplashViewModel) {
     val splashUiState = viewModel.splashStateUi
 
@@ -155,4 +155,4 @@ private fun SplashContentLoadingStatePreview() {
     HelloWorldArxTheme {
         SplashContent(splashUiState = splashUiState)
     }
-}
+}*/

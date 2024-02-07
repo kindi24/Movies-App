@@ -5,15 +5,18 @@ plugins {
     kotlin("android")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
+    id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "net.arx.helloworldarx"
     compileSdk = 34
 
+    
+
     defaultConfig {
         applicationId = "net.arx.helloworldarx"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
@@ -64,14 +67,16 @@ android {
         create("dev") {
             dimension = "env"
             resValue("string", "app_name", "Hello World Arx Dev")
-            buildConfigField("String", "TMDB_HOST_NAME", "\"api.themoviedb.org\"")
+            buildConfigField("String", "TMDB_HOST_NAME", "\"https://api.themoviedb.org\"")
+            buildConfigField("String","TMDB_IMAGES_HOST_NAME","\"https://image.tmdb.org\"")
             applicationIdSuffix = ".dev"
             signingConfig = signingConfigs.getByName("debug")
         }
         create("prod") {
             dimension = "env"
             resValue("string", "app_name", "Hello World Arx")
-            buildConfigField("String", "TMDB_HOST_NAME", "\"api.themoviedb.org\"")
+            buildConfigField("String", "TMDB_HOST_NAME", "\"https://api.themoviedb.org\"")
+            buildConfigField("String","TMDB_IMAGES_HOST_NAME","\"https://image.tmdb.org\"")
             signingConfig = signingConfigs.getByName("release")
         }
     }
@@ -106,6 +111,9 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.browser:browser:1.7.0")
+
+    implementation ("com.google.code.gson:gson:2.10.1")
+
 
     val composeBom = platform("androidx.compose:compose-bom:2023.10.00")
     // use for main dependencies
@@ -154,8 +162,6 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
 
-    implementation("io.coil-kt:coil-compose:2.0.0")
-
     implementation("androidx.security:security-crypto-ktx:1.1.0-alpha06")
 
     // test
@@ -165,4 +171,19 @@ dependencies {
     androidTestImplementation("io.mockk:mockk:1.13.3")
     androidTestImplementation("io.mockk:mockk-android:1.13.3")
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+
+    //Room
+    val roomVersion by extra {"2.6.1"}
+    implementation("androidx.room:room-runtime:${roomVersion}")
+    annotationProcessor("androidx.room:room-compiler:${roomVersion}")
+    kapt("androidx.room:room-compiler:${roomVersion}")
+    implementation("androidx.room:room-ktx:${roomVersion}")
+
+
+    //Coil for loading images
+    val coilVersion by extra {"2.5.0"}
+    implementation("io.coil-kt:coil:${coilVersion}")
+    implementation("io.coil-kt:coil-compose:${coilVersion}")
+
 }
